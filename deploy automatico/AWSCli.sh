@@ -78,9 +78,8 @@ else
 fi
 
 echo 11.  capturar ip publicas 
-ip=$(aws ec2 describe-instances --instance-id "$id_instancia_1" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
-ip=$(aws ec2 describe-instances --instance-id "$id_instancia_2" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
-ip=$(aws ec2 describe-instances --instance-id "$id_instancia_3" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
-
+id_ip_1=$(aws ec2 describe-instances --instance-id "$id_instancia_1" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
+id_ip_2=$(aws ec2 describe-instances --instance-id "$id_instancia_2" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
+id_ip_3=$(aws ec2 describe-instances --instance-id "$id_instancia_3" --query "Reservations[*].Instances[*].{Address:PublicIpAddress}" --output text)
 
 echo  instancias ok 
